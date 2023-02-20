@@ -34,8 +34,8 @@ function main(serialPort, start_time) {
         };
 
         const port = new SerialPort({path: portName, baudRate: 9600});
-        const parser = port.pipe(new DelimiterParser({delimiter: '\xff'}));
-        readlineParser.addListener( "data", (b) => {
+        const delimeterParserInstance = new DelimiterParser({delimiter: '\xff'});
+        delimeterParserInstance.addListener( "data", (b) => {
             console.log(b);
             if (b.length == 11) {
                 console.log(
@@ -90,8 +90,7 @@ function main(serialPort, start_time) {
 
             else console.log('UNRECOGNIZED:', b);
         });
-
-        
+        port.pipe(delimeterParserInstance)
     }
 
 }
