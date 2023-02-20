@@ -5,6 +5,7 @@ const {DelimiterParser} = require('@serialport/parser-delimiter');
 const format = require("python-format-js");
 const path = require("path");
 const strftime = require('strftime');
+const { readlineParser } = require('@serialport/parser-readline');
 const { InterByteTimeoutParser } = require('@serialport/parser-inter-byte-timeout');
 
 
