@@ -26,7 +26,7 @@ export function parse(binaryPacket) {
 
   const optionalSensorValue = parseInt(binaryPacketStringView.slice(2, 6), 10) * correctionCoefficient;
 
-  console.log(`${sensorCodeName} value: `, sensorValue);
+  console.log(`${sensorCodeName} value: `, optionalSensorValue);
   const date = new Date();
 
   return {

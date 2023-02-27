@@ -4,7 +4,7 @@
         {
           sensorCodeName: "Temp",
           value: "33",
-          date: new Date(),
+          date,
         },
         {
           sensorCodeName: "O2",
@@ -14,7 +14,7 @@
       ],
     });
     const request = await fetch(
-      "http://192.168.1.12/api/sensorMeasurement/createMany",
+      {port:3000},
       {
         body,
         headers: {
